@@ -1,5 +1,7 @@
--cd Iris-app
+## Steps to run:  
 
--pip install -r requirements.txt
+`cd Iris-app`  
 
--streamlit run iris_app.py
+`pip install -r requirements.txt`  
+
+`streamlit run iris_app.py`

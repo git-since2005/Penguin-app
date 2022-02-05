@@ -61,7 +61,7 @@ def prediction(model, island, bill_length_mm, bill_depth_mm, flipper_length_mm, 
     return 'Gentoo'
   elif predicted == 1:
     return 'Chinstrap'
-%%writefile iris_app.py
+# %%writefile iris_app.py
 st.sidebar.title("Penguin species prediction app")
 island = st.sidebar.selectbox("Island", ())
 island = 0 if island == 'Biscoe' else 1 if island == 'Dream' else 2

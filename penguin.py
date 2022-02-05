@@ -65,10 +65,10 @@ def prediction(model, island, bill_length_mm, bill_depth_mm, flipper_length_mm, 
 st.sidebar.title("Penguin species prediction app")
 island = st.sidebar.selectbox("Island", ())
 island = 0 if island == 'Biscoe' else 1 if island == 'Dream' else 2
-length = st.sidebar.slider("Length in mm", df['bill_length_mm'].min(), df['bill_length_mm'].max())
-depth = st.sidebar.slider("Depth in mm", df['bill_depth_mm'].min(), df['bill_depth_mm'].max())
-flipper = st.sidebar.slider("Flipper length in mm", df['flipper_length_mm'].min(), df['flipper_length_mm'].max())
-body_mass = st.sidebar.slider("Body mass in grams", df['body_mass_g'].min(), df['body_mass_g'].max())
+length = st.sidebar.slider("Length in mm", float(df['bill_length_mm'].min()), float(df['bill_length_mm'].max()))
+depth = st.sidebar.slider("Depth in mm", float(df['bill_depth_mm'].min()), float(df['bill_depth_mm'].max()))
+flipper = st.sidebar.slider("Flipper length in mm", float(df['flipper_length_mm'].min()), float(df['flipper_length_mm'].max()))
+body_mass = st.sidebar.slider("Body mass in grams", float(df['body_mass_g'].min()), float(df['body_mass_g'].max()))
 sex = st.sidebar.selectbox("Select the gender", ('Male', 'Female'))
 sex = 0 if sex == 'Male' else 1
 classifiers = st.sidebar.selectbox("Select the algorithm to predict", ('Support Vector Machine', 'Random Forest Classifiers', 'Logistic Regression'))

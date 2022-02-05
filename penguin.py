@@ -64,13 +64,21 @@ def prediction(model, island, bill_length_mm, bill_depth_mm, flipper_length_mm, 
 # %%writefile iris_app.py
 st.sidebar.title("Penguin species prediction app")
 island = st.sidebar.selectbox("Island", ('Biscoe', 'Dream', 'Torgersen'))
-island = 0 if island == 'Biscoe' else 1 if island == 'Dream' else 2
+if island == 'Biscoe':
+  island = 0
+elif island == 'Dream':
+  island = 1
+else:
+  island = 2
 length = st.sidebar.slider("Length in mm", float(df['bill_length_mm'].min()), float(df['bill_length_mm'].max()))
 depth = st.sidebar.slider("Depth in mm", float(df['bill_depth_mm'].min()), float(df['bill_depth_mm'].max()))
 flipper = st.sidebar.slider("Flipper length in mm", float(df['flipper_length_mm'].min()), float(df['flipper_length_mm'].max()))
 body_mass = st.sidebar.slider("Body mass in grams", float(df['body_mass_g'].min()), float(df['body_mass_g'].max()))
 sex = st.sidebar.selectbox("Select the gender", ('Male', 'Female'))
-sex = 0 if sex == 'Male' else 1
+if sex == 'Male':
+  sex = 0
+elif sex == 'Female':
+  sex = 1
 classifiers = st.sidebar.selectbox("Select the algorithm to predict", ('Support Vector Machine', 'Random Forest Classifiers', 'Logistic Regression'))
 if st.button("Predict"):
   if classifiers == "Support Vector Machine":

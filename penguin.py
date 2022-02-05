@@ -63,7 +63,7 @@ def prediction(model, island, bill_length_mm, bill_depth_mm, flipper_length_mm, 
     return 'Chinstrap'
 # %%writefile iris_app.py
 st.sidebar.title("Penguin species prediction app")
-island = st.sidebar.selectbox("Island", ())
+island = st.sidebar.selectbox("Island", ('Biscoe', 'Dream', 'Torgersen'))
 island = 0 if island == 'Biscoe' else 1 if island == 'Dream' else 2
 length = st.sidebar.slider("Length in mm", float(df['bill_length_mm'].min()), float(df['bill_length_mm'].max()))
 depth = st.sidebar.slider("Depth in mm", float(df['bill_depth_mm'].min()), float(df['bill_depth_mm'].max()))
